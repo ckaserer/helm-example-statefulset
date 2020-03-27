@@ -1,0 +1,19 @@
+---
+statefulset:
+  replicas: 3
+  resources:
+    requests:
+      cpu: 1m
+
+horizontalPodAutoscaler:
+  create: false
+  minReplicas: 3
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 50
+
+scc:
+  create: true
+
+route:
+  create: true
+...
